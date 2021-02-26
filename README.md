@@ -24,18 +24,18 @@ DOMAIN ERROR
 
 ## Features
 
-| Glyph | Extension                                                    |
-| :---: | ------------------------------------------------------------ |
-|  `~`  | Extended domain, behaves like `0=`                           |
-|  `⍭`  | New function, `dfns.pco`                                     |
-|  `√`  | New function, `⍺`-th root (by default `⍺=2`)                 |
-|  `<`  | Extended domain, monadic decrement.                          |
-|  `>`  | Extended domain, monadic increment.                          |
-|  `⍛`  | New function, reverse compose.                               |
-|  `⍢`  | Round towards closest `⍺`, defaulting to `⍺=1`               |
-|  `⍍`  | Matrix multiplication, identity matrix of size..             |
-|  `…`  | Adam Brudzewsky's Range                                      |
-|  `⍙`  | Iverson's monadic dot product (e.g. `-⍙×` - determinant)     |
+| Glyph | Extension                                                     |
+| :---: | ------------------------------------------------------------- |
+|  `~`  | Extended, behaves like `0=`                                   |
+|  `⍭`  | New, `dfns.pco`                                               |
+|  `√`  | New, `⍺`-th root (by default `⍺=2`)                           |
+|  `<`  | Extended, monadic decrement.                                  |
+|  `>`  | Extended, monadic increment.                                  |
+|  `⍛`  | New, reverse compose.                                         |
+|  `⍢`  | New, Round towards closest `⍺`, defaulting to `⍺=1`           |
+|  `⍍`  | New, Matrix multiplication, identity matrix of size..         |
+|  `…`  | New, Adam Brudzewsky's Range                                  |
+|  `⍙`  | New, Iverson's monadic dot product (e.g. `-⍙×` - determinant) |
 
 ## Quirks & Bugs
 
