@@ -28,3 +28,4 @@ DOMAIN ERROR
 | :---: | ------------------------------------------------------------ |
 |  `~`  | Extended domain, behaves like `0=`                           |
 |  `⍭`  | New function, `dfns.pco`                                     |
+|  `√`  | New function, `⍺`-th root (by default `⍺=2`)                 |
