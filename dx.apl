@@ -10,7 +10,30 @@ dx←{
     t,←'<' '_Lt'⋄ns._Lt←{0=⎕NC'⍺':⍵-1⋄⍺<⍵}
     t,←'>' '_Gt'⋄ns._Gt←{0=⎕NC'⍺':⍵+1⋄⍺>⍵}
     t,←'⍛' '_Rc'⋄ns._Rc←{⍵⍵∘⍺⍺}
-    t,←'⍢' '_Round' ⋄ ns._Round←{⍺←1⋄⍺(⊢∘××⊣×∘⌈¯0.5+∘|÷⍨)⍵}
+    t,←'⍢' '_Round'⋄ns._Round←{⍺←1⋄⍺(⊢∘××⊣×∘⌈¯0.5+∘|÷⍨)⍵}
+    t,←'⍍' '_MatMul'⋄ns._MatMul←{0=⎕NC'⍺':(,⍨⍴1,⍴∘0)⍵ ⋄ ⍺+.×⍵}
+    t,←'…' '_Range'⋄ns._Range←{
+        ⍝ Adam Brudzewsky's Range function.
+        ⎕IO←0
+        Char←0 2∊⍨10|⎕DR
+        end←⊃⍵
+        tail←1↓⍵
+        charend←Char end
+        default←⎕UCS⍣charend⊢0
+        ⍺←default
+        charbegins←Char¨¯2↑⍺
+        lead←-(2-charend)⌊(≢⍺)⌊+/charend=charbegins
+        head←lead↓⍺
+        begin←(¯1⌊lead)↑¯2↑default,lead↑⍺
+        charend:head,tail,⍨⎕UCS(⎕UCS begin)∇ ⎕UCS end
+        from step←-⍨\2↑begin,begin+×end-begin
+        head,tail,⍨from+step×⍳0⌈1+⌊(end-from)÷step+step=0
+    }
+    t,←'⍙' '_MonadicDot'⋄ns._MonadicDot←{
+        i←⍵ ⋄ o←⍳n←⊃⍴⍵
+        m←1+↓⍉↑{1=⍵:,⊂,0 ⋄ (⊃,/)¨(⍳⍵)⌽¨⊂(⊂(!⍵-1)⍴⍵-1),⍨∇ ⍵-1}n
+        ⍺⍺/(⍵⍵{⍺⍺/{i[⊃⍵;2⊃⍵]}¨o,¨⍵})¨m
+    }
     h←{k v←↓⍉2(⊢⍴⍨÷⍨∘≢,⊣)⍺⋄{⍵∊k:⊃v[k⍳⍵] ⋄ ⍵}¨⍵}
     g←⍺⍺⋄c←↓⎕CR'g'
     s←{{⍵/⍨2∨/0,' '≠⍵}⍵/⍨~+\⍵='⍝'}¨c

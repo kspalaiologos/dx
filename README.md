@@ -33,3 +33,10 @@ DOMAIN ERROR
 |  `>`  | Extended domain, monadic increment.                          |
 |  `⍛`  | New function, reverse compose.                               |
 |  `⍢`  | Round towards closest `⍺`, defaulting to `⍺=1`               |
+|  `⍍`  | Matrix multiplication, identity matrix of size..             |
+|  `…`  | Adam Brudzewsky's Range                                      |
+|  `⍙`  | Iverson's monadic dot product (e.g. `-⍙×` - determinant)     |
+
+## Quirks & Bugs
+
+* The left operand to `dx` must be a dfn, either inline or named.
