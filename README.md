@@ -32,4 +32,4 @@ DOMAIN ERROR
 |  `<`  | Extended domain, monadic decrement.                          |
 |  `>`  | Extended domain, monadic increment.                          |
 |  `⍛`  | New function, reverse compose.                               |
-
+|  `⍢`  | Round towards closest `⍺`, defaulting to `⍺=1`               |
