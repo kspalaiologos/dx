@@ -38,6 +38,7 @@ DOMAIN ERROR
 |  `⍙`  | New, Iverson's monadic dot product (e.g. `-⍙×` - determinant) |
 |  `¨`  | Extended, dyadic behaves like zip                             |
 |  `∧`  | Extended, monadic sorts ascending                             |
+|  `∨`  | Extended, monadic sorts descending                            |
 
 ## Quirks & Bugs
 
