@@ -24,4 +24,7 @@ DOMAIN ERROR
 
 ## Features
 
-TODO
+| Glyph | Extension                                                    |
+| :---: | ------------------------------------------------------------ |
+|  `~`  | Extended domain, behaves like `0=`                           |
+|  `⍭`  | New function, `dfns.pco`                                     |
