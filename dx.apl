@@ -12,22 +12,13 @@ dx←{
     t,←'⍛' '_Rc'⋄ns._Rc←{⍵⍵∘⍺⍺}
     t,←'⍢' '_Round'⋄ns._Round←{⍺←1⋄⍺(⊢∘××⊣×∘⌈¯0.5+∘|÷⍨)⍵}
     t,←'⍍' '_MatMul'⋄ns._MatMul←{0=⎕NC'⍺':(,⍨⍴1,⍴∘0)⍵⋄⍺+.×⍵}
-    t,←'…' '_Range'⋄ns._Range←{
+    t,←'…' '_Range' ⋄ ns._Range←{
         ⍝ Adam Brudzewsky's Range function.
-        ⎕IO←0
-        Char←0 2∊⍨10|⎕DR
-        end←⊃⍵
-        tail←1↓⍵
-        charend←Char end
-        default←⎕UCS⍣charend⊢0
-        ⍺←default
-        charbegins←Char¨¯2↑⍺
-        lead←-(2-charend)⌊(≢⍺)⌊+/charend=charbegins
-        head←lead↓⍺
-        begin←(¯1⌊lead)↑¯2↑default,lead↑⍺
-        charend:head,tail,⍨⎕UCS(⎕UCS begin)∇ ⎕UCS end
-        from step←-⍨\2↑begin,begin+×end-begin
-        head,tail,⍨from+step×⍳0⌈1+⌊(end-from)÷step+step=0
+        ⍝ modified to follow a terser code style.
+        ⎕IO←0 ⋄ c←0 2∊⍨10|⎕DR ⋄ t←1↓⍵ ⋄ d←c(e←⊃⍵)
+        f←⎕UCS⍣d⊢0 ⋄ ⍺←f ⋄ l←-(2-d)⌊(≢⍺)⌊+/d=c¨¯2↑⍺
+        s←l↓⍺ ⋄ b←(¯1⌊l)↑¯2↑f,l↑⍺ ⋄ d:s,t,⍨⎕UCS(⎕UCS b)∇ ⎕UCS e
+        F S←-⍨\2↑b,b+×e-b ⋄ s,t,⍨F+S×⍳0⌈1+⌊(e-F)÷S+S=0
     }
     t,←'⍙' '_MonadicDot'⋄ns._MonadicDot←{
         i←⍵ ⋄ o←⍳n←⊃⍴⍵
