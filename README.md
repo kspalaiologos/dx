@@ -41,6 +41,7 @@ DOMAIN ERROR
 |  `∨`  | Extended, monadic sorts descending                            |
 |  `⍗`  | New, inverse a function                                       |
 |  `⍐`  | New, iterate infintely                                        |
+|  `𝑓`  | New, fibonacci numbers                                        |
 
 ## Quirks & Bugs
 
