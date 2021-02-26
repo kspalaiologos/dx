@@ -31,4 +31,5 @@ DOMAIN ERROR
 |  `√`  | New function, `⍺`-th root (by default `⍺=2`)                 |
 |  `<`  | Extended domain, monadic decrement.                          |
 |  `>`  | Extended domain, monadic increment.                          |
+|  `⍛`  | New function, reverse compose.                               |
 
