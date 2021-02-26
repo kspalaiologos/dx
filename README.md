@@ -45,3 +45,10 @@ DOMAIN ERROR
 ## Quirks & Bugs
 
 * The left operand to `dx` must be a dfn, either inline or named.
+
+## Additional credits
+
+```
+Dzaima: a better pmat implementation
+Adam Brudzewsky: Range implementation 
+```
