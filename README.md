@@ -39,6 +39,8 @@ DOMAIN ERROR
 |  `¨`  | Extended, dyadic behaves like zip                             |
 |  `∧`  | Extended, monadic sorts ascending                             |
 |  `∨`  | Extended, monadic sorts descending                            |
+|  `⍗`  | New, inverse a function                                       |
+|  `⍐`  | New, iterate infintely                                        |
 
 ## Quirks & Bugs
 
