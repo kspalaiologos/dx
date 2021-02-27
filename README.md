@@ -36,7 +36,6 @@ DOMAIN ERROR
 |  `⍍`  | New, Matrix multiplication, identity matrix of size..         |
 |  `…`  | New, Adam Brudzewsky's Range                                  |
 |  `⍙`  | New, Iverson's monadic dot product (e.g. `-⍙×` - determinant) |
-|  `¨`  | Extended, dyadic behaves like zip                             |
 |  `∧`  | Extended, monadic sorts ascending                             |
 |  `∨`  | Extended, monadic sorts descending                            |
 |  `⍗`  | New, inverse a function                                       |
