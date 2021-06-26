@@ -43,6 +43,7 @@ DOMAIN ERROR
 |  `𝑓`  | New, fibonacci numbers                                        |
 |  `⍦`  | New, middle function                                          |
 |  `⍁`  | New, diagonal function (extract all diagonals of a matrix)    |
+|  `⍮`  | New, pair (`{⍺ ⍵}`)                                           |
 
 Example usage of the middle function:
 ```
