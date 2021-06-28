@@ -9,6 +9,8 @@ In your APL REPL, run
 ```
 .. to load the `dx` workspace.
 
+You need to load dfns.pco to be able to use `⍭`, or use supplied `slow_pco.apl`
+
 ## Usage
 
 Use the operator `dx` to extend the domain of any monadic or dyadic function.
