@@ -6,7 +6,7 @@
      ⍝ Workaround for Dyalog's Safe Exec disallowing monadic quadNS.
      ns←⎕JSON'{}'
      t←'~' '_Neg' ⋄ ns._Neg←{0=⍵}
-     t,←'⍭' '_Pco' ⋄ ns._Pco←({⍵⊣⍵.⎕CY'dfns'}⎕NS ⍬).pco
+     t,←'⍭' '_Pco' ⋄ ns._Pco←pco
      t,←'√' '_Root' ⋄ ns._Root←{⍺←2 ⋄ :⍵*÷⍺}
      t,←'<' '_Lt' ⋄ ns._Lt←{0=⎕NC'⍺':⍵-1 ⋄ ⍺<⍵}
      t,←'>' '_Gt' ⋄ ns._Gt←{0=⎕NC'⍺':⍵+1 ⋄ ⍺>⍵}
