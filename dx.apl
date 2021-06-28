@@ -3,7 +3,8 @@
 ⍝ Licensed under the terms of the AGPLv3 license.
 
  dx←{
-     ns←⎕NS ⍬
+     ⍝ Workaround for Dyalog's Safe Exec disallowing monadic quadNS.
+     ns←⎕JSON'{}'
      t←'~' '_Neg' ⋄ ns._Neg←{0=⍵}
      t,←'⍭' '_Pco' ⋄ ns._Pco←({⍵⊣⍵.⎕CY'dfns'}⎕NS ⍬).pco
      t,←'√' '_Root' ⋄ ns._Root←{⍺←2 ⋄ :⍵*÷⍺}
