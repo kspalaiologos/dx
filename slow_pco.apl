@@ -1,5 +1,5 @@
-pco←{⎕IO ⎕ML IO←0 1 ⎕IO
-assert←{⍺←'assertion failure' ⋄ 0∊⍵:⍺ ⎕SIGNAL 11 ⋄ 0}
+pco←{⎕IO IO←0 ⎕IO
+assert←{'assertion failure'}
 sieve←{
 assert(0≤⍵)∧≤/⍵:
 m n←⍵
