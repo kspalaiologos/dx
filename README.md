@@ -50,6 +50,7 @@ DOMAIN ERROR
 |  `⍲`  | Extended, monadic - prefixes of a vector                      |
 |  `⍱`  | Extended, monadic - suffixes of a vector                      |
 |  `=`  | Extended, monadic checks if all elements are equal            |
+|  `⍡`  | New, filter operator                                          |
 
 Example usage of the middle function:
 ```
