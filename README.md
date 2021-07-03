@@ -3,13 +3,7 @@
 
 ## Installation
 
-In your APL REPL, run
-```
-)load /path/to/dx
-```
-.. to load the `dx` workspace.
-
-You need to load dfns.pco to be able to use `⍭`, or use supplied `slow_pco.apl`
+`⎕FIX` the APL source file.
 
 ## Usage
 
