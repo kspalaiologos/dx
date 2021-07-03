@@ -36,7 +36,7 @@ DOMAIN ERROR
 |  `∨`  | Extended, monadic sorts descending                            |
 |  `⍗`  | New, inverse a function                                       |
 |  `⍐`  | New, iterate infintely                                        |
-|  `𝑓`  | New, fibonacci numbers                                        |
+|  `φ`  | New, fibonacci numbers                                        |
 |  `⍦`  | New, middle function                                          |
 |  `⍁`  | New, diagonal function (extract all diagonals of a matrix)    |
 |  `⍮`  | New, pair (`{⍺ ⍵}`) or constant (monadic)                     |
