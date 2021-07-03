@@ -12,7 +12,7 @@
      cp,←'⍬0123456789⊢∆ABCDEFGHIJKLMNOPQRS'
      cp,←'TUVWXYZ⍙[/⌿\⍀<≤=≥>≠∨∧-+÷×?∊"#&@:'
      cp,←'⍷⋄←⍝)]⍴~↑↓⍳○*⌈⌊∇∘(⊂⊃∩∪⊥⊤|;,⍱⍲⍒⍋⍉'
-     cp,←'⌽⊖⍟⌹!⍕⍎⍫⍪≡≢⎕⍞⍣⍭√⍛⍢⍍…⍙φ⍗⍐⍦⍁⍮Φ'
+     cp,←'⌽⊖⍟⌹!⍕⍎⍫⍪≡≢⎕⍞⍣⍭√⍛⍢⍍…⍙φ⍗⍐⍦⍁⍮Φ⍡'
      ⍝ custom operations
      t←⊂'~' '_Neg' ⋄ ns._Neg←{0=⍵}
      t,←⊂'⍭' '_Pco' ⋄ ns._Pco←dfns.pco
@@ -44,6 +44,7 @@
      t,←⊂'⍁' '_Diagonal' ⋄ ns._Diagonal←{⍵⊢∘⊂⌸⍨⍥,+/↑⍳⍴⍵}
      t,←⊂'⍮' '_Pair' ⋄ ns._Pair←{⍺←,⊂ ⋄ ⍺ ⍵}
      t,←⊂'Φ' '_Totient' ⋄ ns._Totient←((×/⊢-≠)3∘dfns.pco)
+     t,←⊂'⍡' '_Prefixes' ⋄ ns._Prefixes←⍳∘≢↑¨⊂
      ⍝ translation and execution
      k←,¯1↓⍉↑t⋄t3←{{0=≢⊃⍵:⊃⌽⍵⋄⊃⌽t⊃⍨⊃⍵}¨⍵,⍥⊂¨⍨{⍸∊k=⊃⍵}¨⍵}
      g←⍺⍺⋄r←t3¨{⍵/⍨{0≠≢⍵}¨⍵}{{⍵↓⍨-'⍝'=⊃⊃⌽⍵}60⌶⍵}¨↓⎕CR'g'
