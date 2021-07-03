@@ -48,6 +48,7 @@ DOMAIN ERROR
 |  `⍮`  | New, pair (`{⍺ ⍵}`)                                           |
 |  `Φ`  | New, Euler's totient                                          |
 |  `⍡`  | New, prefixes of a vector                                     |
+|  `=`  | Extended, monadic checks if all elements are equal            |
 
 Example usage of the middle function:
 ```
