@@ -46,6 +46,7 @@ DOMAIN ERROR
 |  `=`  | Extended, monadic checks if all elements are equal            |
 |  `⍡`  | New, filter operator                                          |
 |  `⊤`  | Extended, `⊥⍣¯1` with `⍺=10` by default                       |
+|  `⌂`  | New, the `dx` operator accessible to the code                 |
 
 Example usage of the middle function:
 ```
