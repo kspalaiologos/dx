@@ -32,9 +32,12 @@
          F S←-⍨\2↑b,b+×e-b ⋄ s,t,⍨F+S×⍳0⌈1+⌊(e-F)÷S+S=0
      }
      t,←⊂'⍙' '_MonadicDot' ⋄ ns._MonadicDot←{
-         i←⍵ ⋄ o←⍳n←⊃⍴⍵
-         m←1+↓⍉↑{1=⍵:,⊂,0 ⋄ (⊃,/)¨(⍳⍵)⌽¨⊂(⊂(!⍵-1)⍴⍵-1),⍨∇ ⍵-1}n
-         ⍺⍺/(⍵⍵{⍺⍺/⌷∘i¨o,¨⍵})¨m
+         ⍝ https://dfns.dyalog.com/n_alt.htm
+         r c←⍴⍵
+         0=r:⍵⍵⌿,⍵
+         1≥c:⍺⍺⌿,⍵
+         M←~⍤1 0⍨⍳r
+         ⍵[;⎕IO]⍺⍺.⍵⍵(∇⍤2)⍵[M;1↓⍳c]
      }
      t,←⊂'φ' '_Fib' ⋄ ns._Fib←{⍺←0 1 ⋄ 0=⍵:⊃⍺ ⋄ (1↓⍺,+/⍺)∇ ⍵-1}
      t,←⊂'⍗' '_PowerDown' ⋄ ns._PowerDown←{op←⍺⍺⍣¯1 ⋄ 0=⎕NC'⍺':op ⍵ ⋄ ⍺ op ⍵}
@@ -64,6 +67,7 @@
      t,←⊂'⍱' '_Suffixes' ⋄ ns._Suffixes←{0=⎕NC'⍺':(⌽∘,¨,\∘⌽)⍵ ⋄ ⍺⍱⍵}
      t,←⊂'=' '_Equal' ⋄ ns._Equal←{0=⎕NC'⍺':(1=≢∘∪)⍵ ⋄ ⍺=⍵}
      t,←⊂'⍡' '_Filter' ⋄ ns._Filter←{⍵/⍨⍺⍺ ⍵}
+     t,←⊂'⊤' '_DownTack' ⋄ ns._DownTack←{⍺←10⋄⍺⊥⍣¯1⊢⍵}
      ⍝ translation and execution
      k←,¯1↓⍉↑t ⋄ t3←{{0=≢⊃⍵:⊃⌽⍵ ⋄ ⊃⌽t⊃⍨⊃⍵}¨⍵,⍥⊂¨⍨{⍸∊k=⊃⍵}¨⍵}
      g←⍺⍺ ⋄ r←t3¨{⍵/⍨{0≠≢⍵}¨⍵}{{⍵↓⍨-'⍝'=⊃⊃⌽⍵}60⌶⍵}¨↓⎕CR'g'
