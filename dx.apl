@@ -4,9 +4,9 @@
 
  dx←{
      ⍝ import dfns
-     dfns←{(⍎⍵⎕NS⍬).⎕CY ⍵}'dfns'
+     dfns←{⍵⊣⍵.⎕CY'dfns'}⎕NS⍬
      ⍝ namespace for symbol implementations
-     ns←⎕NS⍬
+     ns←⎕NS ⍬
      ⍝ code page
      cp←'⌶%⍺⍵_abcdefghijklmnopqrstuvwxyz¯.'
      cp,←'⍬0123456789⊢∆ABCDEFGHIJKLMNOPQRS'
@@ -44,7 +44,7 @@
      t,←⊂'⍦' '_Middle' ⋄ ns._Middle←{⍺>0:(-⍺)↓⍺↓⍵ ⋄ x←⌈(|⍺)-⍨2÷⍨≢⍵ ⋄ (-x)↓x↓⍵}
      t,←⊂'⍁' '_Diagonal' ⋄ ns._Diagonal←{⍵⊢∘⊂⌸⍨⍥,+/↑⍳⍴⍵}
      t,←⊂'⍮' '_Pair' ⋄ ns._Pair←{
-         0≠⎕nc'⍺':⍺ ⍵
+         0≠⎕NC'⍺':⍺ ⍵
          ⍵=0:'0123456789'
          ⍵=1:'abcdefghijklmnopqrstuvwxyz'
          ⍵=2:'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
@@ -60,12 +60,13 @@
          ⍵=12:3.1415
      }
      t,←⊂'Φ' '_Totient' ⋄ ns._Totient←((×/⊢-≠)3∘dfns.pco)
-     t,←⊂'⍲' '_Prefixes' ⋄ ns._Prefixes←{0=⎕nc'⍺':(⍳∘≢↑¨⊂)⍵⋄⍺⍲⍵}
-     t,←⊂'⍱' '_Suffixes' ⋄ ns._Suffixes←{0=⎕nc'⍺':(⌽∘,¨,\∘⌽)⍵⋄⍺⍱⍵}
-     t,←⊂'=' '_Equal' ⋄ ns._Equal←{0=⎕nc'⍺':(1=≢∘∪)⍵⋄⍺=⍵}
-     t,←⊂'⍡' '_Filter' ⋄ ns._Filter←{⍵/⍨⍺⍺⍵}
+     t,←⊂'⍲' '_Prefixes' ⋄ ns._Prefixes←{0=⎕NC'⍺':(⍳∘≢↑¨⊂)⍵ ⋄ ⍺⍲⍵}
+     t,←⊂'⍱' '_Suffixes' ⋄ ns._Suffixes←{0=⎕NC'⍺':(⌽∘,¨,\∘⌽)⍵ ⋄ ⍺⍱⍵}
+     t,←⊂'=' '_Equal' ⋄ ns._Equal←{0=⎕NC'⍺':(1=≢∘∪)⍵ ⋄ ⍺=⍵}
+     t,←⊂'⍡' '_Filter' ⋄ ns._Filter←{⍵/⍨⍺⍺ ⍵}
      ⍝ translation and execution
-     k←,¯1↓⍉↑t⋄t3←{{0=≢⊃⍵:⊃⌽⍵⋄⊃⌽t⊃⍨⊃⍵}¨⍵,⍥⊂¨⍨{⍸∊k=⊃⍵}¨⍵}
-     g←⍺⍺⋄r←t3¨{⍵/⍨{0≠≢⍵}¨⍵}{{⍵↓⍨-'⍝'=⊃⊃⌽⍵}60⌶⍵}¨↓⎕CR'g'
-     2=⎕NC'⍺':⍺(ns⍎∊r)⍵⋄(ns⍎∊r)⍵
+     k←,¯1↓⍉↑t ⋄ t3←{{0=≢⊃⍵:⊃⌽⍵ ⋄ ⊃⌽t⊃⍨⊃⍵}¨⍵,⍥⊂¨⍨{⍸∊k=⊃⍵}¨⍵}
+     g←⍺⍺ ⋄ r←t3¨{⍵/⍨{0≠≢⍵}¨⍵}{{⍵↓⍨-'⍝'=⊃⊃⌽⍵}60⌶⍵}¨↓⎕CR'g'
+     p←↑↑{∊⍺'⋄'⍵}/{∊⍺' '⍵}/¨r
+     2=⎕NC'⍺':⍺(ns⍎p)⍵ ⋄ (ns⍎p)⍵
  }
