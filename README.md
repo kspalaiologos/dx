@@ -46,6 +46,8 @@ DOMAIN ERROR
 |  `⍦`  | New, middle function                                          |
 |  `⍁`  | New, diagonal function (extract all diagonals of a matrix)    |
 |  `⍮`  | New, pair (`{⍺ ⍵}`)                                           |
+|  `Φ`  | New, Euler's totient                                          |
+|  `⍡`  | New, prefixes of a vector                                     |
 
 Example usage of the middle function:
 ```
