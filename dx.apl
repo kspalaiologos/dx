@@ -68,6 +68,7 @@
      t,←⊂'=' '_Equal' ⋄ ns._Equal←{0=⎕NC'⍺':(1=≢∘∪)⍵ ⋄ ⍺=⍵}
      t,←⊂'⍡' '_Filter' ⋄ ns._Filter←{⍵/⍨⍺⍺ ⍵}
      t,←⊂'⊤' '_DownTack' ⋄ ns._DownTack←{⍺←10⋄⍺⊥⍣¯1⊢⍵}
+     t,←⊂'⌂' '_DX' ⋄ ns._DX←∇∇ 
      ⍝ translation and execution
      k←,¯1↓⍉↑t ⋄ t3←{{0=≢⊃⍵:⊃⌽⍵ ⋄ ⊃⌽t⊃⍨⊃⍵}¨⍵,⍥⊂¨⍨{⍸∊k=⊃⍵}¨⍵}
      g←⍺⍺ ⋄ r←t3¨{⍵/⍨{0≠≢⍵}¨⍵}{{⍵↓⍨-'⍝'=⊃⊃⌽⍵}60⌶⍵}¨↓⎕CR'g'
