@@ -45,9 +45,10 @@ DOMAIN ERROR
 |  `𝑓`  | New, fibonacci numbers                                        |
 |  `⍦`  | New, middle function                                          |
 |  `⍁`  | New, diagonal function (extract all diagonals of a matrix)    |
-|  `⍮`  | New, pair (`{⍺ ⍵}`)                                           |
+|  `⍮`  | New, pair (`{⍺ ⍵}`) or constant (monadic)                     |
 |  `Φ`  | New, Euler's totient                                          |
-|  `⍡`  | New, prefixes of a vector                                     |
+|  `⍲`  | Extended, monadic - prefixes of a vector                      |
+|  `⍱`  | Extended, monadic - suffixes of a vector                      |
 |  `=`  | Extended, monadic checks if all elements are equal            |
 
 Example usage of the middle function:
