@@ -45,6 +45,7 @@
      t,←⊂'⍮' '_Pair' ⋄ ns._Pair←{⍺←,⊂ ⋄ ⍺ ⍵}
      t,←⊂'Φ' '_Totient' ⋄ ns._Totient←((×/⊢-≠)3∘dfns.pco)
      t,←⊂'⍡' '_Prefixes' ⋄ ns._Prefixes←⍳∘≢↑¨⊂
+     t,←c'=' '_Equal' ⋄ ns._Equal←{0=⎕nc'⍺':(1=≢∘∪)⍵⋄⍺=⍵}
      ⍝ translation and execution
      k←,¯1↓⍉↑t⋄t3←{{0=≢⊃⍵:⊃⌽⍵⋄⊃⌽t⊃⍨⊃⍵}¨⍵,⍥⊂¨⍨{⍸∊k=⊃⍵}¨⍵}
      g←⍺⍺⋄r←t3¨{⍵/⍨{0≠≢⍵}¨⍵}{{⍵↓⍨-'⍝'=⊃⊃⌽⍵}60⌶⍵}¨↓⎕CR'g'
