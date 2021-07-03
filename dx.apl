@@ -17,7 +17,7 @@
      ⍝ custom operations
      t←⊂'~' '_Neg' ⋄ ns._Neg←{0=⍵}
      t,←⊂'⍭' '_Pco' ⋄ ns._Pco←dfns.pco
-     t,←⊂'√' '_Root' ⋄ ns._Root←{⍺←2 ⋄ :⍵*÷⍺}
+     t,←⊂'√' '_Root' ⋄ ns._Root←{⍺←2 ⋄ ⍵*÷⍺}
      t,←⊂'<' '_Lt' ⋄ ns._Lt←{0=⎕NC'⍺':⍵-1 ⋄ ⍺<⍵}
      t,←⊂'>' '_Gt' ⋄ ns._Gt←{0=⎕NC'⍺':⍵+1 ⋄ ⍺>⍵}
      t,←⊂'⍛' '_Rc' ⋄ ns._Rc←{⍵⍵∘⍺⍺}
