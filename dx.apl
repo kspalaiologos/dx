@@ -12,7 +12,8 @@
      cp,←'⍬0123456789⊢∆ABCDEFGHIJKLMNOPQRS'
      cp,←'TUVWXYZ⍙[/⌿\⍀<≤=≥>≠∨∧-+÷×?∊"#&@:'
      cp,←'⍷⋄←⍝)]⍴~↑↓⍳○*⌈⌊∇∘(⊂⊃∩∪⊥⊤|;,⍱⍲⍒⍋⍉'
-     cp,←'⌽⊖⍟⌹!⍕⍎⍫⍪≡≢⎕⍞⍣⍭√⍛⍢⍍…⍙φ⍗⍐⍦⍁⍮Φ⍡'
+     cp,←'⌽⊖⍟⌹!⍕⍎⍫⍪≡≢⎕⍞⍣⍭√⍛⍢⍍…⍙φ⍗⍐⍦⍁⍮Φ'
+     cp,←∊(⎕UCS 32)(⎕UCS 10)
      ⍝ custom operations
      t←⊂'~' '_Neg' ⋄ ns._Neg←{0=⍵}
      t,←⊂'⍭' '_Pco' ⋄ ns._Pco←dfns.pco
@@ -42,9 +43,25 @@
      t,←⊂'∨' '_Or' ⋄ ns._Or←{0=⎕NC'⍺':⍵[⍒⍵] ⋄ ⍺∨⍵}
      t,←⊂'⍦' '_Middle' ⋄ ns._Middle←{⍺>0:(-⍺)↓⍺↓⍵ ⋄ x←⌈(|⍺)-⍨2÷⍨≢⍵ ⋄ (-x)↓x↓⍵}
      t,←⊂'⍁' '_Diagonal' ⋄ ns._Diagonal←{⍵⊢∘⊂⌸⍨⍥,+/↑⍳⍴⍵}
-     t,←⊂'⍮' '_Pair' ⋄ ns._Pair←{⍺←,⊂ ⋄ ⍺ ⍵}
+     t,←⊂'⍮' '_Pair' ⋄ ns._Pair←{
+         0≠⎕nc'⍺':⍺ ⍵
+         ⍵=0:'0123456789'
+         ⍵=1:'abcdefghijklmnopqrstuvwxyz'
+         ⍵=2:'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+         ⍵=3:'yaeiou'
+         ⍵=4:'YAEIOU'
+         ⍵=5:'YAEIOU'
+         ⍵=6:819⌶⎕A~'YAEIOU'
+         ⍵=7:⎕A~'YAEIOU'
+         ⍵=8:4294967296
+         ⍵=9:4294967295
+         ⍵=10:2÷¯1+5*÷2  ⍝ golden ratio
+         ⍵=11:⎕UCS 10
+         ⍵=12:3.1415
+     }
      t,←⊂'Φ' '_Totient' ⋄ ns._Totient←((×/⊢-≠)3∘dfns.pco)
-     t,←⊂'⍡' '_Prefixes' ⋄ ns._Prefixes←⍳∘≢↑¨⊂
+     t,←⊂'⍲' '_Prefixes' ⋄ ns._Prefixes←{0=⎕nc'⍺':(⍳∘≢↑¨⊂)⍵⋄⍺⍲⍵}
+     t,←⊂'⍱' '_Suffixes' ⋄ ns._Suffixes←{0=⎕nc'⍺':(⌽∘,¨,\∘⌽)⍵⋄⍺⍱⍵}
      t,←c'=' '_Equal' ⋄ ns._Equal←{0=⎕nc'⍺':(1=≢∘∪)⍵⋄⍺=⍵}
      ⍝ translation and execution
      k←,¯1↓⍉↑t⋄t3←{{0=≢⊃⍵:⊃⌽⍵⋄⊃⌽t⊃⍨⊃⍵}¨⍵,⍥⊂¨⍨{⍸∊k=⊃⍵}¨⍵}
